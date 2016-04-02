@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     Button btn;
     ProgressBar pgb;
     TextView txt;
-    int progressbarstatus = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +34,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                pgb.setProgress(pgb.getProgress()+10);
-
-                progressbarstatus = progressbarstatus+10;
-
-                if (progressbarstatus >= 100){
 
 
-                    txt.setText("DONE!");
 
-                }
 
 
             }
