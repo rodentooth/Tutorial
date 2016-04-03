@@ -1,6 +1,7 @@
 package com.frozensparks.tutorial.tutorial;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -106,6 +107,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
                 txt.setText("DONE!");
+
+                SharedPreferences.Editor editor = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE).edit();
+
+                editor.putInt("progressbarstatus", progressbarstatus);
+                editor.commit();
 
             }
         }
