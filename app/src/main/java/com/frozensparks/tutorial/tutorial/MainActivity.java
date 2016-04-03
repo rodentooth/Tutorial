@@ -1,5 +1,6 @@
 package com.frozensparks.tutorial.tutorial;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
                 pgb.setProgress(pgb.getProgress() + 10);
 
-
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
             }
         });
 
