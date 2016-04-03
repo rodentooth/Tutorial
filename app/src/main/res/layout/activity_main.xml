@@ -45,4 +45,13 @@
             android:layout_centerHorizontal="true"
             />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Act2"
+        android:id="@+id/btn2"
+        android:layout_below="@+id/tw2"
+        android:layout_centerHorizontal="true"
+        />
+
 </RelativeLayout>

@@ -13,11 +13,14 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btn;
+    Button btn2;
     ProgressBar pgb;
     TextView txt;
+    int progressbarstatus = 0;
+    Intent start;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -31,7 +34,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btn = (Button) findViewById(R.id.button);
-
+        btn.setOnClickListener(this);
+        btn2 = (Button) findViewById(R.id.btn2);
+        btn2.setOnClickListener(this);
 
         pgb = (ProgressBar) findViewById(R.id.pgb);
         txt = (TextView) findViewById(R.id.tw);
@@ -39,19 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
         pgb.setProgress(0);
         pgb.setMax(100);
+         start = new Intent(MainActivity.this, SecondActivity.class);
 
-
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                pgb.setProgress(pgb.getProgress() + 10);
-
-                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                startActivity(intent);
-            }
-        });
 
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -98,5 +92,29 @@ public class MainActivity extends AppCompatActivity {
         );
         AppIndex.AppIndexApi.end(client, viewAction);
         client.disconnect();
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        if (id == R.id.button) {
+            pgb.setProgress(pgb.getProgress() + 10);
+
+            progressbarstatus = progressbarstatus+10;
+
+            if (progressbarstatus >= 100){
+
+
+                txt.setText("DONE!");
+
+            }
+        }
+        if (id == R.id.btn2) {
+            Intent start = new Intent(MainActivity.this, SecondActivity.class);
+            MainActivity.this.startActivity(start);
+
+        }
+
+
     }
 }
