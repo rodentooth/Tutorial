@@ -28,8 +28,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/tw"
             android:layout_centerHorizontal="true"
-
-
             />
     <TextView
         android:text="SEITE 1"
