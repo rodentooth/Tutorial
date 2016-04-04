@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     Button btn;
     ProgressBar pgb;
     TextView txt;
-
+    int pgbstatus = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +37,28 @@ public class MainActivity extends AppCompatActivity {
 
                 pgb.setProgress(pgb.getProgress()+10);
 
-//update
+        pgbstatus=pgbstatus+10;
 
-
+                if (pgbstatus>=10){
+                    txt.setText("Hoi Emi");                 }
+                if (pgbstatus>=20){
+                    txt.setText("Dis");                     }
+                if (pgbstatus>=30){
+                    txt.setText("Mami");                    }
+                if (pgbstatus>=40){
+                    txt.setText("gaht");                    }
+                if (pgbstatus>=50){
+                    txt.setText("in");                      }
+                if (pgbstatus>=60){
+                    txt.setText("Aldi");                    }
+                if (pgbstatus>=70){
+                    txt.setText("go");                      }
+                if (pgbstatus>=80){
+                    txt.setText("spaziere.");               }
+                if (pgbstatus>=90){
+                    txt.setText("^^");                      }
+                if (pgbstatus>=100){
+                    txt.setText("#Amana");                  }
             }
         });
 
