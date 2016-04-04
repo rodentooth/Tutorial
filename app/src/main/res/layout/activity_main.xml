@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tw"
             android:layout_centerHorizontal="true"
-            android:textColor="#0008ff" />
+            android:textColor="#2027ff" />
 
             />
 
